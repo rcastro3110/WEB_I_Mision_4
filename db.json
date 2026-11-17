@@ -1,0 +1,40 @@
+{
+  "runs": [
+    {
+      "id": 1,
+      "nombre": "Ana",
+      "juego": "Minecraft",
+      "categoria": "Any%",
+      "plataforma": "PC",
+      "version": "1.20",
+      "tiempo": 754,
+      "fecha": "2026-10-01",
+      "video": "",
+      "normas": true
+    },
+    {
+      "id": 2,
+      "nombre": "Leo",
+      "juego": "Minecraft",
+      "categoria": "Any%",
+      "plataforma": "PS5",
+      "version": "1.20",
+      "tiempo": 690,
+      "fecha": "2026-10-05",
+      "video": "",
+      "normas": true
+    },
+    {
+      "id": 3,
+      "nombre": "Marta",
+      "juego": "Outer Wilds",
+      "categoria": "100%",
+      "plataforma": "PC",
+      "version": "1.1.13",
+      "tiempo": 5400,
+      "fecha": "2026-09-20",
+      "video": "",
+      "normas": true
+    }
+  ]
+}
