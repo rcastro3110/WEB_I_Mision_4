@@ -1,12 +1,28 @@
-//TEMP
-import { categoriasDe, categoriaValida } from "./data/juegos.js";
-console.log(categoriasDe("Minecraft"));
-console.log(categoriaValida("Minecraft", "All Moons")); // false
-console.log(categoriaValida("Super Mario Odyssey", "All Moons")); // true
+import { useState } from "react";
+import { NOMBRES_JUEGOS } from "./data/juegos.js";
+import ListaRuns from "./components/ListaRuns.jsx";
 
 function App() {
+  const [juego, setJuego] = useState(NOMBRES_JUEGOS[0]);
+
   return (
     <>
+      <h1>Speedrun Leaderboard</h1>
+
+      <label htmlFor="selector-juego">Game</label>
+      <select
+        id="selector-juego"
+        value={juego}
+        onChange={(e) => setJuego(e.target.value)}
+      >
+        {NOMBRES_JUEGOS.map((nombre) => (
+          <option key={nombre} value={nombre}>
+            {nombre}
+          </option>
+        ))}
+      </select>
+
+      <ListaRuns juego={juego} />
     </>
   )
 }
