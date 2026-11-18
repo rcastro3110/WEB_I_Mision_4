@@ -4,6 +4,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
+//TEMP
+import { categoriasDe, categoriaValida } from "./data/juegos.js";
+console.log(categoriasDe("Minecraft"));
+console.log(categoriaValida("Minecraft", "All Moons")); // false
+console.log(categoriaValida("Super Mario Odyssey", "All Moons")); // true
+
 function App() {
   const [count, setCount] = useState(0)
 
