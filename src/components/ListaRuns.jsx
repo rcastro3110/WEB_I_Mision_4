@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { obtenerRuns } from "../services/runs.js";
+import { obtenerRuns, mensajeDeError } from "../services/runs.js";
 
 // Pasa segundos a "1:02:03" (con horas) o "12:34" (sin horas)
 function formatearTiempo(total) {
@@ -23,7 +23,7 @@ export default function ListaRuns({ juego }) {
     });
 
     if (isPending) return <p role="status">Loading…</p>;
-    if (isError) return <p role="alert">Error: {error.message}</p>;
+    if (isError) return <p role="alert">Error: {mensajeDeError(error)}</p>;
     if (data.length === 0) return <p>No runs for this game yet.</p>;
 
     // Valor derivado: más rápida primero (no se guarda como estado)

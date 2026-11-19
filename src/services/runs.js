@@ -19,3 +19,9 @@ export async function crearRun(run) {
     }
     return respuesta.json();
 }
+
+export function mensajeDeError(error) {
+    return error instanceof TypeError
+        ? "Could not connect. Check your internet connection."
+        : error.message;
+}

@@ -5,7 +5,7 @@ import { runSchema, aSegundos } from "../schemas/runSchema.js";
 import { PLATAFORMAS, categoriasDe } from "../data/juegos.js";
 import CampoFormulario from "./CampoFormulario.jsx";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { crearRun } from "../services/runs.js";
+import { crearRun, mensajeDeError } from "../services/runs.js";
 
 export default function FormularioRun({ juego }) {
     const [categoria, setCategoria] = useState("");
@@ -182,13 +182,7 @@ export default function FormularioRun({ juego }) {
                 {mutacion.isPending ? "Sending…" : "Submit run"}
             </button>
             {mutacion.isSuccess && <p role="status">Run submitted!</p>}
-            {mutacion.isError && (
-                <p role="alert">
-                    {mutacion.error instanceof TypeError
-                    ? "Could not connect. Check your internet connection."
-                    : mutacion.error.message}
-                </p>
-            )}
+            {mutacion.isError && <p role="alert">{mensajeDeError(mutacion.error)}</p>}
         </form>
     );
 }
