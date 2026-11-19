@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NOMBRES_JUEGOS } from "./data/juegos.js";
 import ListaRuns from "./components/ListaRuns.jsx";
+import FormularioRun from "./components/FormularioRun.jsx";
 
-function App() {
+export default function App() {
   const [juego, setJuego] = useState(NOMBRES_JUEGOS[0]);
 
   return (
@@ -23,8 +24,8 @@ function App() {
       </select>
 
       <ListaRuns juego={juego} />
-    </>
-  )
-}
 
-export default App
+      <FormularioRun key={juego} juego={juego} />
+    </>
+  );
+}

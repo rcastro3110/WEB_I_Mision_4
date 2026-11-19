@@ -22,7 +22,7 @@ export default function ListaRuns({ juego }) {
         queryFn: () => obtenerRuns(juego),
     });
 
-    if (isPending) return <p>Loading…</p>;
+    if (isPending) return <p role="status">Loading…</p>;
     if (isError) return <p role="alert">Error: {error.message}</p>;
     if (data.length === 0) return <p>No runs for this game yet.</p>;
 
