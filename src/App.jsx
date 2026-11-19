@@ -7,25 +7,35 @@ export default function App() {
   const [juego, setJuego] = useState(NOMBRES_JUEGOS[0]);
 
   return (
-    <>
-      <h1>Speedrun Leaderboard</h1>
+    <main className="app">
+      <header className="cabecera">
+        <h1>Speedrun Leaderboard</h1>
+        <div className="selector">
+          <label htmlFor="selector-juego">Game</label>
+          <select
+            id="selector-juego"
+            value={juego}
+            onChange={(e) => setJuego(e.target.value)}
+          >
+            {NOMBRES_JUEGOS.map((nombre) => (
+              <option key={nombre} value={nombre}>
+                {nombre}
+              </option>
+            ))}
+          </select>
+        </div>
+      </header>
 
-      <label htmlFor="selector-juego">Game</label>
-      <select
-        id="selector-juego"
-        value={juego}
-        onChange={(e) => setJuego(e.target.value)}
-      >
-        {NOMBRES_JUEGOS.map((nombre) => (
-          <option key={nombre} value={nombre}>
-            {nombre}
-          </option>
-        ))}
-      </select>
+      <div className="columnas">
+        <section className="panel panel--tabla">
+          <h2>Leaderboard: {juego}</h2>
+          <ListaRuns juego={juego} />
+        </section>
 
-      <ListaRuns juego={juego} />
-
-      <FormularioRun key={juego} juego={juego} />
-    </>
+        <section className="panel">
+          <FormularioRun key={juego} juego={juego} />
+        </section>
+      </div>
+    </main>
   );
 }
