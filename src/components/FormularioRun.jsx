@@ -46,8 +46,8 @@ export default function FormularioRun({ juego }) {
     const categorias = categoriasDe(juego);
     const descripcion = categorias.find((c) => c.nombre === categoria)?.descripcion;
 
-    // register devuelve { name, onChange, onBlur, ref }; guardamos el suyo
-    // para poder avisar también a nuestro useState
+    // Registramos nombre ANTES que categoria para que sea el primero en el orden de foco
+    const registroNombre = register("nombre");
     const registroCategoria = register("categoria");
 
     function onSubmit(datos) {
@@ -77,7 +77,7 @@ export default function FormularioRun({ juego }) {
                 label="Runner name"
                 error={errors.nombre}
                 autoComplete="nickname"
-                {...register("nombre")}
+                {...registroNombre}
             />
 
             <CampoFormulario
