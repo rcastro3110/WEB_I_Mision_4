@@ -7,6 +7,7 @@ import CampoFormulario from "./CampoFormulario.jsx";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { crearRun, mensajeDeError } from "../services/runs.js";
 
+
 export default function FormularioRun({ juego }) {
     const [categoria, setCategoria] = useState("");
 

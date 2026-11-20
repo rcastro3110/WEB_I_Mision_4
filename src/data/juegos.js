@@ -19,7 +19,6 @@ export const JUEGOS = {
   ],
   "Minecraft": [
     { nombre: "Any%", descripcion: "Terminar el juego lo más rápido posible." },
-    { nombre: "100%", descripcion: "Completar todo el contenido antes de terminar." },
     { nombre: "All achievements", descripcion: "Conseguir todos los logros antes de terminar." },
   ],
 };

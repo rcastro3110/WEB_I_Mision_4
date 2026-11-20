@@ -1,16 +1,35 @@
-# React + Vite
+# Speedrun Leaderboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Misión M4 · Full Contact Forms — Web Development I.
 
-Currently, two official plugins are available:
+App en React 19 + Vite donde se envían y consultan tiempos de speedrun. Eliges un juego, ves su ranking (la run más rápida primero) y puedes enviar una run nueva con un formulario validado. La run aparece sola en el ranking al enviarla. Usa React Hook Form + Zod para el formulario y TanStack Query v5 para las peticiones.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Qué se puede hacer
 
-## React Compiler
+- Elegir un juego (Outer Wilds, Zelda: Ocarina of Time, Super Mario Odyssey o Minecraft) y ver sus runs ordenadas por tiempo.
+- Enviar una run: nombre, categoría, plataforma, versión, tiempo (horas, minutos y segundos), fecha, vídeo opcional y aceptar las normas.
+- Ver errores junto a cada campo, un estado de "Sending…" al enviar, y el mensaje de éxito o error al terminar.
+- Ver la run nueva en el ranking sin recargar.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura
 
-## Expanding the ESLint configuration
+- `src/data/juegos.js`: juegos, categorías (con descripción) y plataformas. Es la fuente de la que salen los selects y el esquema.
+- `src/schemas/runSchema.js`: esquema Zod con todas las reglas de validación.
+- `src/services/runs.js`: las funciones que hablan con la API (`obtenerRuns` y `crearRun`) y el mensaje de error.
+- `src/components/`: `ListaRuns` (ranking), `FormularioRun` (formulario) y `CampoFormulario` (campo reutilizable y accesible).
+- `src/App.jsx`: guarda el juego elegido y lo pasa al ranking y al formulario.
+- `db.json`: los datos de la API. Las runs que trae son de ejemplo, inventadas.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Uso de IA
+
+Usé Claude como guía paso a paso. Le pedí que me explicara los conceptos de la unidad (React Hook Form, Zod, TanStack Query) y que me diera el código por pasos pequeños. La idea, los campos y los datos los decidí yo.
+
+Prompts reales:
+- "Quiero dibujar yo los campos del formulario para pensar "
+- "Lo que quiero es que puedas elegir distintos juegos y luego salga la info de cada juego speeruneado, osea las runs y la categoria"
+- "Todo lo que has usado en estos tres archivos esta en el pdf????"
+
+Cómo verifiqué lo generado: probé cada paso en el navegador antes de seguir, comprobé en `db.json` que la run se guardaba con su `id`, miré en la pestaña Network que tras el POST salía un GET (la invalidación), probé el formulario vacío y con el teclado, y paré la API para ver el error. 
+
+## Decisiones
+
