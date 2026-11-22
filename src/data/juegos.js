@@ -3,23 +3,24 @@
 
 export const JUEGOS = {
   "Outer Wilds": [
-    { nombre: "Any%", descripcion: "Terminar el juego lo más rápido posible." },
-    { nombre: "100%", descripcion: "Completar todo el contenido antes de terminar." },
-    { nombre: "All friends", descripcion: "Reunir a todos los personajes antes de acabar." },
+    { nombre: "Any%", descripcion: "Finish the game as fast as possible." },
+    { nombre: "100%", descripcion: "Complete all the content before finishing." },
+    { nombre: "All friends", descripcion: "Meet all the characters before finishing." },
   ],
   "Zelda: Ocarina of Time": [
-    { nombre: "Any%", descripcion: "Terminar el juego lo más rápido posible." },
-    { nombre: "100%", descripcion: "Completar todo el contenido antes de terminar." },
-    { nombre: "All Dungeons", descripcion: "Completar todas las mazmorras antes de terminar." },
+    { nombre: "Any%", descripcion: "Finish the game as fast as possible." },
+    { nombre: "100%", descripcion: "Complete all the content before finishing." },
+    { nombre: "All Dungeons", descripcion: "Complete every dungeon before finishing." },
   ],
   "Super Mario Odyssey": [
-    { nombre: "Any%", descripcion: "Terminar el juego lo más rápido posible." },
-    { nombre: "100%", descripcion: "Completar todo el contenido antes de terminar." },
-    { nombre: "All Moons", descripcion: "Conseguir todas las lunas antes de terminar." },
+    { nombre: "Any%", descripcion: "Finish the game as fast as possible." },
+    { nombre: "100%", descripcion: "Complete all the content before finishing." },
+    { nombre: "All Moons", descripcion: "Collect every moon before finishing." },
   ],
   "Minecraft": [
-    { nombre: "Any%", descripcion: "Terminar el juego lo más rápido posible." },
-    { nombre: "All achievements", descripcion: "Conseguir todos los logros antes de terminar." },
+    { nombre: "Any%", descripcion: "Finish the game as fast as possible." },
+    { nombre: "100%", descripcion: "Complete all the content before finishing." },
+    { nombre: "All achievements", descripcion: "Earn every achievement before finishing." },
   ],
 };
 

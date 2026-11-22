@@ -298,6 +298,18 @@
       "video": "",
       "normas": true,
       "id": 25
+    },
+    {
+      "nombre": "CheeseRunner1",
+      "juego": "Outer Wilds",
+      "categoria": "Any%",
+      "plataforma": "PC",
+      "version": "1.1.15",
+      "tiempo": 485,
+      "fecha": "2026-11-19",
+      "video": "https://www.youtube.com/watch?v=9gFPtJb-VIg&t=6s",
+      "normas": true,
+      "id": 26
     }
   ]
 }

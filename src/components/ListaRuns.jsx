@@ -54,7 +54,13 @@ export default function ListaRuns({ juego }) {
 
                 return (
                 <section key={c.nombre} className="categoria">
-                    <h3>{c.nombre}</h3>
+                    <div className="categoria-titulo">
+                        <h3>{c.nombre}</h3>
+                        <details className="info">
+                            <summary>?</summary>
+                            <p>{c.descripcion}</p>
+                        </details>
+                    </div>
                     <table>
                     <thead>
                         <tr>
@@ -63,6 +69,8 @@ export default function ListaRuns({ juego }) {
                         <th>Time</th>
                         <th>Platform</th>
                         <th>Date</th>
+                        <th>Version</th>
+                        <th>Video</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,6 +81,16 @@ export default function ListaRuns({ juego }) {
                             <td>{formatearTiempo(run.tiempo)}</td>
                             <td>{run.plataforma}</td>
                             <td>{formatearFecha(run.fecha)}</td>
+                            <td>{run.version}</td>
+                            <td>
+                                {run.video.startsWith("https://") ? (
+                                    <a href={run.video} target="_blank" rel="noreferrer">
+                                    Watch
+                                    </a>
+                                ) : (
+                                    "—"
+                                )}
+                            </td>
                         </tr>
                         ))}
                     </tbody>
