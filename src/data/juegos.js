@@ -32,6 +32,13 @@ export const PLATAFORMAS = [
   "Nintendo Switch 2",
 ];
 
+export const IMAGENES = {
+  "Outer Wilds": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1623/Zofebh60Ue7Zt5sC10UAtU3D.png",
+  "Zelda: Ocarina of Time": "https://i1.sndcdn.com/artworks-000464588955-2ftldl-t500x500.jpg",
+  "Super Mario Odyssey": "https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_1920,q_auto:low/MNS/NOE/70010000000127/SQ_NSwitch_SuperMarioOdyssey_HomepageWithOverlay",
+  "Minecraft": "https://store-images.s-microsoft.com/image/apps.17382.13510798885735219.9735d495-578c-4a4c-b892-3eb3a780b3a0.d3792486-cf98-40c0-a2c1-d6443f0e2b70",
+};
+
 // Lista de nombres de juego, para el select
 export const NOMBRES_JUEGOS = Object.keys(JUEGOS);
 

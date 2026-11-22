@@ -47,7 +47,6 @@ export default function FormularioRun({ juego }) {
     const categorias = categoriasDe(juego);
     const descripcion = categorias.find((c) => c.nombre === categoria)?.descripcion;
 
-    // Registramos nombre ANTES que categoria para que sea el primero en el orden de foco
     const registroNombre = register("nombre");
     const registroCategoria = register("categoria");
 

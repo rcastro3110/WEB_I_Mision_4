@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NOMBRES_JUEGOS } from "./data/juegos.js";
+import { NOMBRES_JUEGOS, IMAGENES } from "./data/juegos.js";
 import ListaRuns from "./components/ListaRuns.jsx";
 import FormularioRun from "./components/FormularioRun.jsx";
 
@@ -28,7 +28,14 @@ export default function App() {
 
       <div className="columnas">
         <section className="panel panel--tabla">
-          <h2>Leaderboard: {juego}</h2>
+          <div className="encabezado-juego">
+            <h2>Leaderboard: {juego}</h2>
+            <img
+              className="portada"
+              src={IMAGENES[juego]}
+              alt={`Screenshot of ${juego}`}
+            />
+          </div>
           <ListaRuns juego={juego} />
         </section>
 

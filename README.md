@@ -33,3 +33,6 @@ Cómo verifiqué lo generado: probé cada paso en el navegador antes de seguir, 
 
 ## Decisiones
 
+1. **Ver las runs por juego, con un selector.** Quise que se pudiera elegir un juego y ver solo sus runs, cada una con su categoría, en vez de un listado único con todas mezcladas. El selector de juego guarda el juego elegido en `App`, y el ranking pide a la API solo las runs de ese juego con la clave `["runs", juego]`. Así cada juego tiene su propia caché y al volver a uno ya visto sale al instante. Un listado único habría mezclado tiempos de juegos distintos, que no se pueden comparar, y habría obligado a filtrar a mano en el cliente.
+
+2. **Juegos y categorías fijos, definidos en el código.** Decidí empezar con cuatro juegos y sus categorías fijos, y dejar para más adelante que el usuario pudiera añadir juegos y categorías nuevos. Eso habría obligado a guardarlos en la API, a hacer un segundo formulario con su propia mutación y a complicar la regla que comprueba que la categoría existe para el juego. Con la lista fija, los selects y el esquema salen de la misma fuente (`juegos.js`) y no se pueden contradecir. El coste es que no se pueden añadir juegos sin tocar el código.

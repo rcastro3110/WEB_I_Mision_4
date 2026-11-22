@@ -23,11 +23,13 @@ export const runSchema = z
         error: "The date cannot be in the future",
       }),
 
-    video: z
-      .string()
-      .refine((v) => v === "" || v.startsWith("https://"), {
-        error: "Use a link starting with https:// (or leave it empty)",
-      }),
+    video: z.union(
+      [
+        z.literal(""),
+        z.url().refine((v) => v.startsWith("https://")),
+      ],
+      { error: "Use a valid link starting with https:// (or leave it empty)" }
+    ),
 
     normas: z.literal(true, { error: "You must accept the rules" }),
   })
